@@ -5,6 +5,7 @@ import random
 from GameOver import GameOver
 from YouWin import YouWin
 import pyglet
+from arcade.sprite_list import _SpatialHash
 
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
@@ -122,6 +123,8 @@ class MyGame(arcade.View):
         self.music_length = 59
         self.musicdt = 59
 
+
+        self.sprite_lists = []
         self.player_list = None
         self.background_list = None
         self.wall_list = None
@@ -134,6 +137,7 @@ class MyGame(arcade.View):
         self.ladder_list = None
         self.ignore_list = None
         self.portal_list = None
+        self.potion_list = None
 
         self.player_sprite = None
 
@@ -182,8 +186,6 @@ class MyGame(arcade.View):
 
         self.pause_background = None
 
-        self.potion_list = None
-
     def on_show(self):
 
         self.window = arcade.get_window()
@@ -192,10 +194,6 @@ class MyGame(arcade.View):
         self.drew_game_over = False
 
         self.player_list = arcade.SpriteList()
-        self.wall_list = arcade.SpriteList(is_static=True)
-        self.coin_list = arcade.SpriteList(is_static=True)
-        self.coin_2_list = arcade.SpriteList(is_static=True)
-        self.coin_5_list = arcade.SpriteList(is_static=True)
         self.potion_list = arcade.SpriteList(is_static=True)
         self.portal_list = arcade.SpriteList(is_static=True)
 
@@ -259,15 +257,40 @@ class MyGame(arcade.View):
         my_map = arcade.tilemap.read_tmx(map_name)
 
         self.background_list = arcade.tilemap.process_layer(my_map, background_layer_name)
+        self.sprite_lists.append(self.background_list)
+
         self.wall_list = arcade.tilemap.process_layer(my_map, platforms_layer_name)
+        self.sprite_lists.append(self.wall_list)
+
         self.coin_list = arcade.tilemap.process_layer(my_map, coins_layer_name)
+        self.sprite_lists.append(self.coin_list)
+
         self.coin_2_list = arcade.tilemap.process_layer(my_map, coins_2_layer_name)
+        self.sprite_lists.append(self.coin_2_list)
+
         self.coin_5_list = arcade.tilemap.process_layer(my_map, coins_5_layer_name)
+        self.sprite_lists.append(self.coin_5_list)
+
         self.coin_secret_list = arcade.tilemap.process_layer(my_map, secret_coins_layer_name)
+        self.sprite_lists.append(self.coin_secret_list)
+
         self.ladder_list = arcade.tilemap.process_layer(my_map, ladder_layer_name)
+        self.sprite_lists.append(self.ladder_list)
+
         self.dont_touch_list = arcade.tilemap.process_layer(my_map, dont_touch_layer_name)
+        self.sprite_lists.append(self.dont_touch_list)
+
         self.super_lava = arcade.tilemap.process_layer(my_map, super_lava_layer_name)
+        self.sprite_lists.append(self.super_lava)
+
         self.ignore_list = arcade.tilemap.process_layer(my_map, ignore_layer_name)
+        self.sprite_lists.append(self.ignore_list)
+
+        for l in self.sprite_lists:
+            l.is_static = True
+            l.spatial_hash = _SpatialHash(cell_size=96*2)
+            l.use_spatial_hash = True
+            l._recalculate_spatial_hashes()
 
         self.screen_width, self.screen_height = self.window.get_size()
         self.old_screen_center_x = int(self.screen_width / 2)
