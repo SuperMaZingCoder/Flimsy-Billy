@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-arcade = "==2.3.15"
+arcade = "==2.4a5"
 
 [scripts]
 game = 'python -OO open_window_views.py'
