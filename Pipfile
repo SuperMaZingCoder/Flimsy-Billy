@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+arcade = "==2.3.15"
+
+[scripts]
+game = 'python -OO open_window_views.py'
+
+[requires]
+python_version = "3.8"
