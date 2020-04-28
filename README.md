@@ -10,17 +10,20 @@ potions wisely. Sometimes it is more efficient to use the potions.
 To download and install *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree* there are a few simple steps that you
 must follow.
 1) Download *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree* by clicking the green *Clone or download* button on
-[the main page of this project](https://github.com/CodeForeverAndEver/game-jam-2020). Then click `Download Zip`. Then
-create a new folder titled anything you want (maybe *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree*?). Double 
-click on the zip-folder you downloaded and drag and drop all of the files and `the-friendly-snakes` folder into the other 
-folder that you just created.
-2) Open up a terminal by clicking `Win + R` (Windows Button + R) and then typing `cmd` and pressing `Enter`. Then, install `pipenv` by typing
-`pip install pipenv` in the terminal you just opened and then pressing enter `Enter`. You can close this window.
-3) Open the `the-friendly-snakes` folder that is inside of the folder you made above. Click in the top bar and type `cmd`
+[the main page of this project](https://github.com/CodeForeverAndEver/game-jam-2020). Then click `Download Zip`. Unzip the
+folder into a new folder using whatever you'd like. I prefer WinRar.
+2) Download the newest version of Python from [Python's Main Page](www.python.org). Run the isntaller and go through
+the installation instructions. **Make sure to click: `Add Python to Path`** When presented with the option.
+3) Open up a terminal by clicking `Win + R` (Windows Button + R) and then typing `cmd` and pressing `Enter`. Then, install `pipenv` by typing
+`pip install pipenv` in the terminal you just opened and then pressing enter `Enter`. You can close this window. This
+will work with no errors if you followed the step above correctly.
+4) Open the folder from above (the zip folder that we unzipped above). Click in the top bar and type `cmd`
 and then click `Enter`. It looks like this: ![How To Open CMD](StuffForREADME/cmd.gif)
-4) In that terminal type: `pipenv sync && pipenv run game` and there you go! The game will be up and running. From now on,
-any time that you want to play in the future you only have to type `pipenv run game` for this last step!
-5) Enjoy *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree*!
+5) In the window that pops up type: `pipenv sync && pipenv run game` and there you go! The game will be up and running!
+6) Enjoy *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree*!
+
+**Please Note** Any time that you want to play this game in the future you only need to do steps 4 and 5, with the exception
+of typing `pipenv run game` **instead** of `pipenv sync && pipenv run game`.
 
 ### How To Play
 To play *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree* you must control Flimsy Billy around the game world
