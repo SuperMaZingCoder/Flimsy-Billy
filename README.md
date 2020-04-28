@@ -10,7 +10,7 @@ potions wisely. Sometimes it is more efficient to use the potions.
 To download and install *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree* there are a few simple steps that you
 must follow.
 1) Download *Flimsy Billy's Coin Dash 3: Super Tag 3 Electric Tree* by clicking the green *Clone or download* button on
-[the main page of this project](https://github.com/CodeForeverAndEver/game-jam-2020). Then click `Download Zip`. Unzip the
+[the main page of this project](https://github.com/CodeForeverAndEver/Flimsy-Billy). Then click `Download Zip`. Unzip the
 folder into a new folder using whatever you'd like. I prefer WinRar.
 2) Download the newest version of Python from [Python's Main Page](www.python.org). Run the isntaller and go through
 the installation instructions. **Make sure to click: `Add Python to Path`** When presented with the option.
