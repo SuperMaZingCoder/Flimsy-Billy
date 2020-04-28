@@ -289,6 +289,7 @@ class MyGame(arcade.View):
         for l in self.sprite_lists:
             l.is_static = True
             l.spatial_hash = _SpatialHash(cell_size=96*2)
+            l.spatial_hash = _SpatialHash(cell_size=96*2)
             l.use_spatial_hash = True
             l._recalculate_spatial_hashes()
 
@@ -611,8 +612,6 @@ class MyGame(arcade.View):
                 self.player_sprite.change_y = 0
 
     def on_update(self, delta_time):
-        print(arcade.__version__)
-
         self.physics_engine.update()
         self.game_timer += delta_time
         self.fps = 1/delta_time
