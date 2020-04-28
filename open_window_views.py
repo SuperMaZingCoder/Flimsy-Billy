@@ -281,7 +281,6 @@ class MyGame(arcade.View):
         self.sprite_lists.append(self.dont_touch_list)
 
         self.super_lava = arcade.tilemap.process_layer(my_map, super_lava_layer_name)
-        self.sprite_lists.append(self.super_lava)
 
         self.ignore_list = arcade.tilemap.process_layer(my_map, ignore_layer_name)
         self.sprite_lists.append(self.ignore_list)
